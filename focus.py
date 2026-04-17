@@ -41,5 +41,5 @@ def get_focus(samples: list, channel: int = 0) -> float:
     """
     Full pipeline: raw EEG samples → smoothed focus score.
     """
-    raw_score = compute_focus_score(samples[channel])
+    raw_score = compute_focus_score(samples)
     return smooth_focus_score(raw_score, channel)
