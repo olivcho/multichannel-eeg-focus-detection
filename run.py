@@ -15,21 +15,10 @@ FOCUS_THRESHOLD_Z = 5
 
 
 def get_z_score(raw: float, mean: float, std: float) -> float:
-    """
-    Normalize a raw focus score relative to the baseline.
-    """
     return (raw - mean) / std
 
 
 def get_label(z: float) -> str:
-    """
-    Return a human-readable label based on the z-score.
-
-    Suggested thresholds:
-    - z >= FOCUS_THRESHOLD_Z     → "FOCUSED"
-    - z <= -FOCUS_THRESHOLD_Z    → "DISTRACTED"
-    - otherwise                  → "NEUTRAL"
-    """
     if z >= FOCUS_THRESHOLD_Z:
         return "FOCUSED"
     elif z <= -FOCUS_THRESHOLD_Z:
@@ -38,9 +27,6 @@ def get_label(z: float) -> str:
         return "NEUTRAL"
 
 def run():
-    """
-    Main real-time detection loop.
-    """
     baseline = load_baseline()
     stream = resolve_byprop('type', 'EEG')[0]
     inlet = StreamInlet(stream)
