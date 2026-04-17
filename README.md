@@ -1,5 +1,7 @@
 # neuro2 — EEG focus pipeline
 
+[OpenBCI Networking Data Formats](https://docs.google.com/document/u/1/d/e/2PACX-1vR_4DXPTh1nuiOwWKwIZN3NkGP3kRwpP4Hu6fQmy3jRAOaydOuEI1jket6V4V6PG4yIG15H1N7oFfdV/pub#h.fs64qwm9zn45)
+
 Small Python project that reads OpenBCI / Ganglion–style EEG over **Lab Streaming Layer (LSL)**, estimates a simple **focus** score from band powers, calibrates it per person, then labels **FOCUSED / NEUTRAL / DISTRACTED** in real time.
 
 ## How it fits together
